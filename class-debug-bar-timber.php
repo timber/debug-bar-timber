@@ -19,7 +19,7 @@ class Debug_Bar_Timber extends Debug_Bar_Panel {
 			$this->filenames[] = $file;
 			return $file;
 		});
-		add_filter('timber_render_data', function($data){
+		add_filter('timber_loader_render_data', function($data){
 			$this->datas[] = $data;
 			return $data;
 		});
@@ -29,7 +29,7 @@ class Debug_Bar_Timber extends Debug_Bar_Panel {
 		$this->set_visible(true);
 	}
 
-	function render($file){
+	function render(){
 		$i = 0;
 		foreach($this->filenames as $file){
 			echo '<h3 style="display:block; font-size:24px; font-weight:bold; font-family:Consolas, mono">'.$file.'</h3>';

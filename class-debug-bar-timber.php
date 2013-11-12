@@ -31,8 +31,10 @@ class Debug_Bar_Timber extends Debug_Bar_Panel {
 
 	function render(){
 		$i = 0;
-		foreach($this->filenames as $file){
-			echo '<h3 style="display:block; font-size:24px; font-weight:bold; font-family:Consolas, mono">'.$file.'</h3>';
+		foreach($this->filenames as $filename){
+			echo '<h3 style="display:block; font-size:24px; font-weight:bold; font-family:Consolas, mono">'.$filename.'</h3>';
+		}
+		foreach($this->files as $file){
 			echo "<p>Timber found template: <code style='font-family:Consolas, mono'>".$this->files[$i]."</code>. Here's the data that you sent: </p>";
 			if (count($this->datas) && isset($this->datas[$i])){
 				$data = $this->datas[$i];

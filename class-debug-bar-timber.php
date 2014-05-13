@@ -12,18 +12,25 @@ class Debug_Bar_Timber extends Debug_Bar_Panel {
 		$this->filenames = array();
 		$this->title('Timber');
 		add_action('wp_ajax_debug_bar_console', array($this, 'ajax'));
-		add_action('timber_loader_render_file', function($filepath){
-			$this->files[] = $filepath;
-		});
-		add_filter('timber_render_file', function($file){
-			$this->filenames[] = $file;
-			return $file;
-		});
-		add_filter('timber_loader_render_data', function($data){
-			$this->datas[] = $data;
-			return $data;
-		});
-	}
+                add_action('timber_loader_render_file', array($this, 'add_file'));
+                add_filter('timber_render_file', array($this, 'render_file'));
+                add_filter('timber_loader_render_data', array($this, 'render_data'));
+        }
+
+        function add_file($file) {
+            $this->files[] = $file;
+        }
+
+        function render_file($file) {
+            $this->filenames[] = $file;
+            return $file;
+        }
+
+        function render_data($data) {
+            $this->datas[] = $data;
+            return $data;
+        }
+
 
 	function prerender(){
 		$this->set_visible(true);

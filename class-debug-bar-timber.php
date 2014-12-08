@@ -49,6 +49,7 @@ class Debug_Bar_Timber extends Debug_Bar_Panel {
 			echo '<h3 style="display:block; font-size:24px; font-weight:bold; font-family:Consolas, mono; color:#111">'.$filename.'</h3>';
 		}
 		if (isset($this->php_files) && is_array($this->php_files)){
+            $this->php_files = array_unique($this->php_files);
 			foreach($this->php_files as $php_file){
 				echo '<h4 style="display:block; font-size:18px; font-weight:bold; font-family:Consolas, mono; color:#AAA">Called from <span style="color:#111">'.$php_file.'</h4>';
 			}

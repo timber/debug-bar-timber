@@ -58,9 +58,12 @@ class Debug_Bar_Timber extends Debug_Bar_Panel {
 			echo "<p>Timber found template: <code style='font-family:Consolas, mono'>".$this->files[$i]."</code>. Here's the data that you sent: </p>";
 			if (count($this->datas) && isset($this->datas[$i])){
 				$data = $this->datas[$i];
-				echo '<pre style="background-color:#e2e2e2; font-family: Consolas, monospace, mono; white-space:pre">';
-				print_r($data);
-				echo '</pre>';
+				foreach ($data as $key => $value) {
+					echo '<details style="outline: none;"><summary style="outline: none; cursor: pointer;">' . $key . '</summary>';
+					echo '<pre style="background-color:#e2e2e2; font-family: Consolas, monospace, mono; white-space:pre">';
+					print_r($value);
+					echo '</pre></details>';
+				}
 			}
 			$i++;
 		}

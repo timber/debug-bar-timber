@@ -8,6 +8,7 @@ class Debug_Bar_Timber extends Debug_Bar_Panel {
 	var $php_files;
 
 	function init() {
+		$this->php_files = array();
 		$this->datas = array();
 		$this->files = array();
 		$this->filenames = array();
@@ -16,6 +17,7 @@ class Debug_Bar_Timber extends Debug_Bar_Panel {
         add_action('timber_loader_render_file', array($this, 'add_file'));
 		add_filter('timber_render_file', array($this, 'render_file'));
 		add_filter('timber_loader_render_data', array($this, 'render_data'));
+		add_filter('timber/calling_php_file', array($this, 'add_php_file'));
 		add_filter('timber_calling_php_file', array($this, 'add_php_file'));
     }
 

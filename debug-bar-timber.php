@@ -4,7 +4,7 @@
     Plugin URI: http://github.com/upstatement/debug-bar-timber/
     Description: Adds Timber render to the debug bar. Requires the debug bar plugin.
     Author: jarednova + upstatement
-    Version: 0.3
+    Version: 0.3.1
     Author URI: http://upstatement.com/
     */
 

@@ -1,0 +1,5 @@
+{
+    "require": {
+        "kktsvetkov/krumo": "^0.4.0"
+    }
+}

@@ -1,5 +1,7 @@
 <?php
 
+include 'lib/krumo/class.krumo.php';
+
 class Debug_Bar_Timber extends Debug_Bar_Panel {
 
 	var $files;
@@ -60,12 +62,21 @@ class Debug_Bar_Timber extends Debug_Bar_Panel {
 			echo "<p>Timber found template: <code style='font-family:Consolas, mono'>".$this->files[$i]."</code>. Here's the data that you sent: </p>";
 			if (count($this->datas) && isset($this->datas[$i])){
 				$data = $this->datas[$i];
-				foreach ($data as $key => $value) {
-					echo '<details style="outline: none;"><summary style="outline: none; cursor: pointer;">' . $key . '</summary>';
-					echo '<pre style="background-color:#e2e2e2; font-family: Consolas, monospace, mono; white-space:pre">';
-					print_r($value);
-					echo '</pre></details>';
+
+
+				if (array_key_exists("post",$data)){
+					echo "<h4>Post Data</h4>";
+					krumo($data["post"]);
+					echo "<h4>Author Data</h4>";
+					krumo($data["post"]->author);
 				}
+
+				echo "<h4>Other Data</h4>";
+				krumo($data);
+
+
+
+
 			}
 			$i++;
 		}

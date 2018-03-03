@@ -1,6 +1,6 @@
 <?php
 
-include 'lib/krumo/class.krumo.php';
+include 'vendor/autoload.php';
 
 class Debug_Bar_Timber extends Debug_Bar_Panel {
 

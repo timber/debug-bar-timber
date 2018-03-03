@@ -4,24 +4,28 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "e34d4f8eb94fd15667612baeca6a1203",
+    "content-hash": "b4a0ea5cba4bb5b82c0d6753e4da2408",
     "packages": [
         {
-            "name": "kktsvetkov/krumo",
-            "version": "0.4",
+            "name": "xenobytezero/krumo",
+            "version": "v0.5.8",
             "source": {
                 "type": "git",
-                "url": "https://github.com/kktsvetkov/krumo.git",
-                "reference": "fc8bfbb350ca481446820a665afe93ab98423e1e"
+                "url": "https://github.com/xenobytezero/krumo.git",
+                "reference": "c2a0339c31f03184c40c6df3180a71659d93f88f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/kktsvetkov/krumo/zipball/fc8bfbb350ca481446820a665afe93ab98423e1e",
-                "reference": "fc8bfbb350ca481446820a665afe93ab98423e1e",
+                "url": "https://api.github.com/repos/xenobytezero/krumo/zipball/c2a0339c31f03184c40c6df3180a71659d93f88f",
+                "reference": "c2a0339c31f03184c40c6df3180a71659d93f88f",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.0"
+                "php": ">=5.2.17"
+            },
+            "require-dev": {
+                "fabpot/php-cs-fixer": "dev-master",
+                "phpmd/phpmd": "dev-master"
             },
             "type": "library",
             "autoload": {
@@ -29,31 +33,41 @@
                     "class.krumo.php"
                 ]
             },
-            "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "LGPL-2.1"
+                "LGPL"
             ],
             "authors": [
                 {
-                    "name": "Kaloyan Tsvetkov (KT)",
-                    "email": "kaloyan@kaloyan.info",
-                    "homepage": "http://kaloyan.info",
-                    "role": "Developer"
+                    "name": "Kaloyan K. Tsvetkov",
+                    "email": "kaloyan@kaloyan.info"
+                },
+                {
+                    "name": "Matthew J. Mucklo",
+                    "email": "mmucklo@gmail.com"
+                },
+                {
+                    "name": "Stefan Thomas",
+                    "email": "moon@justmoon.de"
+                },
+                {
+                    "name": "Scott Baker",
+                    "email": "scott@perturb.org"
                 }
             ],
-            "description": "Krumo is a debugging tool, which displays structured information about any PHP variable. It is a nice replacement for print_r() or var_dump() which are used by a lot of PHP developers.",
-            "homepage": "http://krumo.kaloyan.info",
+            "description": "KRUMO - version 2.0 of print_r(); and var_dump(); (with new updates)",
             "keywords": [
                 "debug",
                 "debugging",
-                "devel",
-                "development",
                 "krumo",
+                "pretty",
+                "print",
                 "print_r",
-                "var_dump",
-                "var_export"
+                "var_dump"
             ],
-            "time": "2017-11-21T10:11:07+00:00"
+            "support": {
+                "source": "https://github.com/xenobytezero/krumo/tree/v0.5.8"
+            },
+            "time": "2018-03-03T14:56:59+00:00"
         }
     ],
     "packages-dev": [],

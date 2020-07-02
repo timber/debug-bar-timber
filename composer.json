@@ -1,11 +1,6 @@
 {
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/xenobytezero/krumo"
-        }
-    ],
+    "repositories": [],
     "require": {
-        "xenobytezero/krumo": "^0.5.8"
+        "kktsvetkov/krumo": "^0.4.1"
     }
 }

@@ -1,9 +1,9 @@
 === Plugin Name ===
-Contributors: jarednova
-Tags: timber, debug
+Contributors: jarednova, manzwebdesigns
+Tags: timber, debug, twig
 Requires at least: 3.5
-Tested up to: 3.6.1
-Stable tag: 0.3
+Tested up to: 5.4.2
+Stable tag: 0.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,6 +17,7 @@ Once installed, the Timber Debug Bar gives you access to the current template na
 
 1. Install the [Debug Bar](http://wordpress.org/plugins/debug-bar/) plugin
 1. Upload `debug-bar-timber` directory to the `/wp-content/plugins/` directory
+1. Run `composer install`
 1. Activate the plugin through the 'Plugins' menu in WordPress
 
 == Frequently Asked Questions ==

@@ -1,0 +1,31 @@
+#debug-menu-targets h3 {
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Consolas, mono, serif;
+    color: #111;
+}
+
+#debug-menu-targets h4 {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Consolas, mono, serif;
+    color: #AAA;
+}
+
+#debug-menu-targets h4 span {
+    color: #111;
+}
+
+#debug-menu-targets code {
+    font-family: Consolas, mono, serif;
+}
+
+#wpadminbar .ab-top-secondary {
+    top: -33px;
+}
+
+#debug-bar-actions span {
+    padding: 3px;
+}

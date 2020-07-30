@@ -4,14 +4,20 @@ use Symfony\Component\VarDumper\VarDumper;
 
 include 'vendor/autoload.php';
 
+/**
+ * Class Debug_Bar_Timber
+ */
 class Debug_Bar_Timber extends Debug_Bar_Panel {
 
-    public $files;
-    public $datas;
-    public $filenames;
-    public $php_files;
+	public $files;
+	public $datas;
+	public $filenames;
+	public $php_files;
 
-    public function init() {
+	/**
+	 * Initialize the toolbar
+	 */
+	public function init() {
         $this->php_files = array();
         $this->datas = array();
         $this->files = array();
@@ -25,30 +31,51 @@ class Debug_Bar_Timber extends Debug_Bar_Panel {
         add_filter('timber_calling_php_file', array($this, 'add_php_file'));
     }
 
-    public function add_php_file($php_file){
+	/**
+	 * @param $php_file
+	 *
+	 * @return mixed
+	 */
+	public function add_php_file($php_file){
         $this->php_files[] = $php_file;
         return $php_file;
     }
 
-    public function add_file($file) {
+	/**
+	 * @param $file
+	 */
+	public function add_file($file) {
         $this->files[] = $file;
     }
 
-    public function render_file($file) {
+	/**
+	 * @param $file
+	 *
+	 * @return mixed
+	 */
+	public function render_file($file) {
         $this->filenames[] = $file;
         return $file;
     }
 
-    public function render_data($data) {
+	/**
+	 * @param $data
+	 *
+	 * @return mixed
+	 */
+	public function render_data($data) {
         $this->datas[] = $data;
         return $data;
     }
 
 
-    public function prerender(){
+	public function prerender(){
         $this->set_visible(true);
     }
 
+	/**
+	 * @param mixed ...$vars
+	 */
 	public function dumpAll(...$vars)
 	{
 		foreach ($vars as $v) {
@@ -56,7 +83,7 @@ class Debug_Bar_Timber extends Debug_Bar_Panel {
 		}
 	}
 
-    public function render(){
+	public function render(){
         $i = 0;
         foreach($this->filenames as $filename){
             echo '<h3>'.$filename.'</h3>';
@@ -85,6 +112,23 @@ class Debug_Bar_Timber extends Debug_Bar_Panel {
                 echo "<h4>Other Data</h4>";
 	            $this->dumpAll($data);
 
+	            echo '<code>{# expected variables:';
+	            $dataKeyNames =  array_keys( $data );
+	            $i = 0;
+	            foreach ( $data as $d ) {
+	            	if( is_array($d) ) {
+	            		$varName = $dataKeyNames[$i];
+	            		$arrayKeynames = array_keys((array) $d[0]);
+			            $keynames = '';
+			            foreach ( $arrayKeynames as $array_keyname ) {
+				            $keynames .= "'" . $array_keyname . "', ";
+			            }
+			            $keynames = substr($keynames, 0, -2 );
+			            echo "<div style='text-indent: .25in'>{$varName}: array of the form array[0][X] where X is {$keynames}</div>";
+	            	}
+	            	$i++;
+	            }
+	            echo '#}</code>';
             }
             $i++;
         }

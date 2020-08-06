@@ -1,7 +1,6 @@
 {
     "repositories": [],
     "require": {
-        "kktsvetkov/krumo": "^0.4.1",
         "symfony/var-dumper": "^5.1"
     }
 }

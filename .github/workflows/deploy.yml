@@ -10,8 +10,10 @@ jobs:
     steps:
     - uses: actions/checkout@master
       run: |
+        rm composer.lock
         sh ./composer-install.sh
         php composer.phar install
+        rm composer.phar composer-install.sh
     - name: WordPress Plugin Deploy
       uses: 10up/action-wordpress-plugin-deploy@master
       env:

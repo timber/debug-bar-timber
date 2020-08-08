@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
+    - name: Build
       run: |
         rm composer.lock
         sh ./composer-install.sh

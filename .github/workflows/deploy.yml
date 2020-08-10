@@ -8,10 +8,6 @@ jobs:
     name: New tag
     runs-on: ubuntu-latest
     steps:
-    - name: Run composer
-      uses: nick-zh/composer-php@master
-      with:
-          action: 'install -oa'
     - uses: actions/checkout@master
     - name: WordPress Plugin Deploy
       uses: 10up/action-wordpress-plugin-deploy@master

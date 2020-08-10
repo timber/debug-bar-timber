@@ -20,3 +20,7 @@ jobs:
         SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
         SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
         SLUG: debug-bar-timber
+    - name: Run composer
+      uses: nick-zh/composer-php@master
+      with:
+        action: 'install -oa'

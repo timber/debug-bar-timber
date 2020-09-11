@@ -22,8 +22,8 @@
     font-family: Consolas, mono, serif;
 }
 
-#wpadminbar .ab-top-secondary {
-    top: -33px;
+#wpadminbar .ab-top-secondary { /*
+    top: -32px; */
 }
 
 #debug-bar-actions span {

@@ -26,7 +26,7 @@ add_action('init', static function() {
 			echo '<div class="'.$class.'"><p>'.$text.'</p></div>';
 		}, 1 );
 	}
-});
+}, 11);
 
 function tdb_enqueue_styles() {
 	wp_enqueue_style( 'dbt', plugins_url( "timber-debug-bar.css", __FILE__ ), [], '20200710' );

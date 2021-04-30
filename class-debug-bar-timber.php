@@ -24,8 +24,8 @@ class Debug_Bar_Timber extends Debug_Bar_Panel {
         $this->filenames = array();
         $this->title('Timber');
         add_action('wp_ajax_debug_bar_console', array($this, 'ajax'));
-        
-	$timber = new \Timber\Timber();
+
+	    $timber = new \Timber\Timber();
 		if(version_compare($timber::$version, '2.0.0', '>=')) {
 			add_action( 'timber/loader/render_file', array( $this, 'add_file' ) );
 			add_filter( 'timber/render/file', array( $this, 'render_file' ) );

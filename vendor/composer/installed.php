@@ -6,19 +6,19 @@
     'aliases' => 
     array (
     ),
-    'reference' => '855bf2a2ffeb0c1693373bfc2d67be339b27c35a',
+    'reference' => 'd43094db5f350242b758c132634b78a82b363c51',
     'name' => 'timber/debug-bar-timber',
   ),
   'versions' => 
   array (
     'symfony/polyfill-mbstring' => 
     array (
-      'pretty_version' => 'v1.22.1',
-      'version' => '1.22.1.0',
+      'pretty_version' => 'v1.23.0',
+      'version' => '1.23.0.0',
       'aliases' => 
       array (
       ),
-      'reference' => '5232de97ee3b75b0360528dae24e73db49566ab1',
+      'reference' => '2df51500adbaebdc4c38dea4c89a2e131c45c8a1',
     ),
     'symfony/polyfill-php56' => 
     array (
@@ -71,12 +71,12 @@
     ),
     'symfony/var-dumper' => 
     array (
-      'pretty_version' => 'v5.2.6',
-      'version' => '5.2.6.0',
+      'pretty_version' => 'v5.3.3',
+      'version' => '5.3.3.0',
       'aliases' => 
       array (
       ),
-      'reference' => '89412a68ea2e675b4e44f260a5666729f77f668e',
+      'reference' => '46aa709affb9ad3355bd7a810f9662d71025c384',
     ),
     'timber/debug-bar-timber' => 
     array (
@@ -85,7 +85,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => '855bf2a2ffeb0c1693373bfc2d67be339b27c35a',
+      'reference' => 'd43094db5f350242b758c132634b78a82b363c51',
     ),
   ),
 );

@@ -1,14 +1,13 @@
 {
     "repositories": [],
     "require": {
-        "php": "^7.4.14",
         "symfony/polyfill-php74": "^1.17",
         "symfony/var-dumper": "^5.2"
     },
+    "options": {
+        "symlink": false
+    },
     "config": {
-        "platform": {
-            "php": "7.4.14"
-        },
         "preferred-install": {
             "*": "dist"
         },

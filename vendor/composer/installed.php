@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'd43094db5f350242b758c132634b78a82b363c51',
+    'reference' => 'da1be6bae10d60c9379ffc7683e3363c82d99ef5',
     'name' => 'timber/debug-bar-timber',
   ),
   'versions' => 
@@ -71,12 +71,12 @@
     ),
     'symfony/var-dumper' => 
     array (
-      'pretty_version' => 'v5.3.3',
-      'version' => '5.3.3.0',
+      'pretty_version' => 'v5.2.11',
+      'version' => '5.2.11.0',
       'aliases' => 
       array (
       ),
-      'reference' => '46aa709affb9ad3355bd7a810f9662d71025c384',
+      'reference' => 'ca2e8ba7fb9bb8c97cb7eca30a0455ff247f3088',
     ),
     'timber/debug-bar-timber' => 
     array (
@@ -85,7 +85,7 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'd43094db5f350242b758c132634b78a82b363c51',
+      'reference' => 'da1be6bae10d60c9379ffc7683e3363c82d99ef5',
     ),
   ),
 );

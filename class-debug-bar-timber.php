@@ -24,11 +24,22 @@ class Debug_Bar_Timber extends Debug_Bar_Panel {
         $this->filenames = array();
         $this->title('Timber');
         add_action('wp_ajax_debug_bar_console', array($this, 'ajax'));
-        add_action('timber_loader_render_file', array($this, 'add_file'));
-        add_filter('timber_render_file', array($this, 'render_file'));
-        add_filter('timber_loader_render_data', array($this, 'render_data'));
-        add_filter('timber/calling_php_file', array($this, 'add_php_file'));
-        add_filter('timber_calling_php_file', array($this, 'add_php_file'));
+
+	    $timber = new \Timber\Timber();
+		if(version_compare($timber::$version, '2.0.0', '>=')) {
+			add_action( 'timber/loader/render_file', array( $this, 'add_file' ) );
+			add_filter( 'timber/render/file', array( $this, 'render_file' ) );
+			add_filter( 'timber/loader/render_data', array( $this, 'render_data' ) );
+			add_filter( 'timber/calling_php_file', array( $this, 'add_php_file' ) );
+			add_filter( 'timber/calling_php_file', array( $this, 'add_php_file' ) );
+		}
+		else {
+			add_action('timber_loader_render_file', array($this, 'add_file'));
+			add_filter('timber_render_file', array($this, 'render_file'));
+			add_filter('timber_loader_render_data', array($this, 'render_data'));
+			add_filter('timber/calling_php_file', array($this, 'add_php_file'));
+			add_filter('timber_calling_php_file', array($this, 'add_php_file'));
+		}
     }
 
 	/**

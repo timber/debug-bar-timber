@@ -8,6 +8,12 @@
 	Author URI: https://upstatement.com/
 */
 
+// bail early if Timber class does not exist
+// useful when you switch themes to non timber based themes (ie. twentytwentyone) for debugging etc.
+if ( !class_exists('Timber') ) {
+        return;
+}
+
 add_filter('debug_bar_panels', static function($panels) {
     require_once('class-debug-bar-timber.php');
     $panels[] = new Debug_Bar_Timber();

@@ -1,6 +1,27 @@
 {
     "repositories": [],
     "require": {
-        "symfony/var-dumper": "^5.1"
-    }
+        "symfony/polyfill-php74": "^1.17",
+        "symfony/var-dumper": "5.2.*"
+    },
+    "options": {
+        "symlink": false
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "replace": {
+        "symfony/polyfill-php80": "*",
+        "symfony/polyfill-php74": "*",
+        "symfony/polyfill-php73": "*",
+        "symfony/polyfill-php72": "*",
+        "symfony/polyfill-php71": "*",
+        "symfony/polyfill-php70": "*",
+        "symfony/polyfill-php56": "*"
+    },
+    "name": "timber/debug-bar-timber",
+    "description": ""
 }

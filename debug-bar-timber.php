@@ -4,9 +4,15 @@
 	Plugin URI: https://github.com/upstatement/debug-bar-timber/
 	Description: Adds Timber render to the debug bar. Requires the debug bar plugin.
 	Author: Jared Nova + Upstatement
-	Version: 1.0.8
+	Version: 1.0.5
 	Author URI: https://upstatement.com/
 */
+
+// bail early if Timber class does not exist
+// useful when you switch themes to non timber based themes (ie. twentytwentyone) for debugging etc.
+if ( !class_exists('Timber') ) {
+        return;
+}
 
 add_filter('debug_bar_panels', static function($panels) {
     require_once('class-debug-bar-timber.php');
@@ -26,7 +32,7 @@ add_action('init', static function() {
 			echo '<div class="'.$class.'"><p>'.$text.'</p></div>';
 		}, 1 );
 	}
-}, 11);
+});
 
 function tdb_enqueue_styles() {
 	wp_enqueue_style( 'dbt', plugins_url( "timber-debug-bar.css", __FILE__ ), [], '20200710' );

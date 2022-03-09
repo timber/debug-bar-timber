@@ -1,13 +1,25 @@
 {
     "repositories": [],
     "require": {
-        "symfony/var-dumper": "^5.2"
+        "symfony/polyfill-php74": "^1.17",
+        "symfony/var-dumper": "5.4.*"
+    }
+,
+    "require-dev": {
+        "roave/security-advisories": "dev-latest"
+    },
+    "options": {
+        "symlink": false
     },
     "config": {
         "preferred-install": {
             "*": "dist"
         },
         "sort-packages": true
+    },
+    "replace": {
+        "symfony/polyfill-php80": "*",
+        "symfony/polyfill-php74": "*"
     },
     "name": "timber/debug-bar-timber",
     "description": ""

@@ -1,6 +1,8 @@
+
 <?php
 
 use Symfony\Component\VarDumper\VarDumper;
+use Timber\Timber;
 
 include 'vendor/autoload.php';
 
@@ -9,15 +11,15 @@ include 'vendor/autoload.php';
  */
 class Debug_Bar_Timber extends Debug_Bar_Panel {
 
-	public $files;
-	public $datas;
-	public $filenames;
-	public $php_files;
+	public array $files;
+	public array $datas;
+	public array $filenames;
+	public array $php_files;
 
 	/**
 	 * Initialize the toolbar
 	 */
-	public function init() {
+	public function init(): void {
         $this->php_files = array();
         $this->datas = array();
         $this->files = array();
@@ -25,7 +27,7 @@ class Debug_Bar_Timber extends Debug_Bar_Panel {
         $this->title('Timber');
         add_action('wp_ajax_debug_bar_console', array($this, 'ajax'));
 
-	    $timber = new \Timber\Timber();
+	    $timber = new Timber();
 		if(version_compare($timber::$version, '2.0.0', '>=')) {
 			add_action( 'timber/loader/render_file', array( $this, 'add_file' ) );
 			add_filter( 'timber/render/file', array( $this, 'render_file' ) );
@@ -55,7 +57,7 @@ class Debug_Bar_Timber extends Debug_Bar_Panel {
 	/**
 	 * @param $file
 	 */
-	public function add_file($file) {
+	public function add_file($file): void {
         $this->files[] = $file;
     }
 
@@ -80,21 +82,20 @@ class Debug_Bar_Timber extends Debug_Bar_Panel {
     }
 
 
-	public function prerender(){
+	public function prerender(): void {
         $this->set_visible(true);
     }
 
 	/**
 	 * @param mixed ...$vars
 	 */
-	public function dumpAll(...$vars)
-	{
+	public function dumpAll(...$vars): void {
 		foreach ($vars as $v) {
 			VarDumper::dump($v);
 		}
 	}
 
-	public function render(){
+	public function render(): void {
         $i = 0;
         foreach($this->filenames as $filename){
             echo '<h3>'.$filename.'</h3>';
@@ -135,7 +136,7 @@ class Debug_Bar_Timber extends Debug_Bar_Panel {
 				            $keynames .= "'" . $array_keyname . "', ";
 			            }
 			            $keynames = substr($keynames, 0, -2 );
-			            echo "<div style='text-indent: .25in'>{$varName}: array of the form array[0][X] where X is {$keynames}</div>";
+			            echo "<div style='text-indent: .25in'>$varName: array of the form array[0][X] where X is $keynames</div>";
 	            	}
 	            	$i++;
 	            }

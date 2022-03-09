@@ -25,3 +25,7 @@
 #debug-bar-actions span {
     padding: 3px;
 }
+
+#debug-menu-links li a#debug-menu-link-Debug_Bar_JS, #wp-admin-bar-debug-bar-Debug_Bar_JS {
+    display: block;
+}

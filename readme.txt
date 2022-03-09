@@ -3,7 +3,7 @@ Contributors: jarednova, manzwebdesigns
 Tags: timber, debug, twig
 Requires at least: 3.5
 Tested up to: 5.9.1
-Stable tag: 1.1.7
+Stable tag: 1.1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

@@ -23,10 +23,6 @@ class Connection
 {
     private $host;
     private $contextProviders;
-
-    /**
-     * @var resource|null
-     */
     private $socket;
 
     /**

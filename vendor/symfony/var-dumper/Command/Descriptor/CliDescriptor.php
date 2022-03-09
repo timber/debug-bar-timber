@@ -11,6 +11,7 @@
 
 namespace Symfony\Component\VarDumper\Command\Descriptor;
 
+use Symfony\Component\Console\Formatter\OutputFormatterStyle;
 use Symfony\Component\Console\Input\ArrayInput;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
@@ -28,10 +29,12 @@ class CliDescriptor implements DumpDescriptorInterface
 {
     private $dumper;
     private $lastIdentifier;
+    private $supportsHref;
 
     public function __construct(CliDumper $dumper)
     {
         $this->dumper = $dumper;
+        $this->supportsHref = method_exists(OutputFormatterStyle::class, 'setHref');
     }
 
     public function describe(OutputInterface $output, Data $data, array $context, int $clientId): void
@@ -63,7 +66,8 @@ class CliDescriptor implements DumpDescriptorInterface
         if (isset($context['source'])) {
             $source = $context['source'];
             $sourceInfo = sprintf('%s on line %d', $source['name'], $source['line']);
-            if ($fileLink = $source['file_link'] ?? null) {
+            $fileLink = $source['file_link'] ?? null;
+            if ($this->supportsHref && $fileLink) {
                 $sourceInfo = sprintf('<href=%s>%s</>', $fileLink, $sourceInfo);
             }
             $rows[] = ['source', $sourceInfo];
@@ -72,6 +76,11 @@ class CliDescriptor implements DumpDescriptorInterface
         }
 
         $io->table([], $rows);
+
+        if (!$this->supportsHref && isset($fileLink)) {
+            $io->writeln(['<info>Open source in your IDE/browser:</info>', $fileLink]);
+            $io->newLine();
+        }
 
         $this->dumper->dump($data);
         $io->newLine();
